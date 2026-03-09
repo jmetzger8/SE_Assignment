@@ -14,7 +14,6 @@ export const findUserById = async (id: string): Promise<PlatformUser | null> => 
   return user || null;
 };
 
-// The function below might be useful for task 2. You can disregard it for the register function for task 1.
 /**
  * Compares a plain text password with a hashed password.
  *
