@@ -1,10 +1,12 @@
 import express from 'express';
 import { getProducts } from './controllers/products.controllers';
 import { getCategories } from './controllers/categories.controllers';
+import { registerUser } from './controllers/auth.controllers'; //auth controller
 import { protect } from './middleware/auth.middleware';
 import { findUserById } from './models/User';
 
 const router = express.Router();
+router.post('/register', registerUser); // added this
 
 router.get('/products', getProducts);
 router.get('/categories', getCategories);

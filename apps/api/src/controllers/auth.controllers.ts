@@ -11,6 +11,12 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
     password
   };
 
-  // please finish this function
+  // added this
+  try{
+   const createdUser = await createUser(newUser);
+   res.status(201).json({id: createdUser.id});
+  }catch(error){
+    res.status(400).json({message: 'Could not register user. Email may already be in use.'});
+  }
 
 };
